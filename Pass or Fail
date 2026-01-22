@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int marks;
+
+    // Input marks
+    printf("Enter the marks: ");
+    scanf("%d", &marks);
+
+    // Check pass or fail
+    if (marks >= 40)
+        printf("Result: PASS\n");
+    else
+        printf("Result: FAIL\n");
+
+    return 0;
+}
