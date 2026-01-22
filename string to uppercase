@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <ctype.h>  // For toupper function
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove newline character if present
+    if (str[strlen(str) - 1] == '\n')
+        str[strlen(str) - 1] = '\0';
+
+    // Convert to uppercase
+    for (i = 0; str[i] != '\0'; i++) {
+        str[i] = toupper(str[i]);
+    }
+
+    printf("Uppercase string: %s\n", str);
+
+    return 0;
+}
