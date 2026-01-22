@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    int i, vowels = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove newline character if present
+    if (str[strlen(str) - 1] == '\n')
+        str[strlen(str) - 1] = '\0';
+
+    // Count vowels
+    for (i = 0; str[i] != '\0'; i++) {
+        char ch = tolower(str[i]);  // Convert to lowercase for simplicity
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            vowels++;
+        }
+    }
+
+    printf("Number of vowels in the string: %d\n", vowels);
+
+    return 0;
+}
