@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+struct Student {
+    int rollNo;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s;
+    FILE *fp;
+
+    // Open file in write mode
+    fp = fopen("student.txt", "w");
+
+    if (fp == NULL) {
+        printf("File cannot be opened!");
+        return 1;
+    }
+
+    // Input student details
+    printf("Enter Roll Number: ");
+    scanf("%d", &s.rollNo);
+
+    printf("Enter Student Name: ");
+    scanf("%s", s.name);
+
+    printf("Enter Marks: ");
+    scanf("%f", &s.marks);
+
+    // Write data to file
+    fprintf(fp, "Roll Number: %d\n", s.rollNo);
+    fprintf(fp, "Name: %s\n", s.name);
+    fprintf(fp, "Marks: %.2f\n", s.marks);
+
+    // Close file
+    fclose(fp);
+
+    printf("\nStudent details saved successfully in file.");
+
+    return 0;
+}
