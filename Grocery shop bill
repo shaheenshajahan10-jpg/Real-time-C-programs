@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int quantity;
+    float price, total;
+
+    printf("Enter quantity of items: ");
+    scanf("%d", &quantity);
+
+    printf("Enter price per item: ");
+    scanf("%f", &price);
+
+    total = quantity * price;
+
+    printf("\nTotal Bill Amount = Rs. %.2f", total);
+
+    return 0;
+}
