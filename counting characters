@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int length;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // Read a line including spaces
+
+    // Remove newline character if present
+    if (str[strlen(str) - 1] == '\n') {
+        str[strlen(str) - 1] = '\0';
+    }
+
+    length = strlen(str);  // Get length of string
+
+    printf("The number of characters in the string is: %d\n", length);
+
+    return 0;
+}
