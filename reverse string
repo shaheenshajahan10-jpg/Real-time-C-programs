@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], reversed[100];
+    int length, i, j;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove newline character if present
+    if (str[strlen(str) - 1] == '\n') {
+        str[strlen(str) - 1] = '\0';
+    }
+
+    length = strlen(str);
+    j = 0;
+
+    // Reverse the string
+    for (i = length - 1; i >= 0; i--) {
+        reversed[j] = str[i];
+        j++;
+    }
+    reversed[j] = '\0';  // Null-terminate the reversed string
+
+    printf("Reversed string: %s\n", reversed);
+
+    return 0;
+}
