@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int n, add, i;
+
+    // Existing records
+    printf("Enter number of existing elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Add new records
+    printf("Enter number of new elements to add: ");
+    scanf("%d", &add);
+
+    printf("Enter %d new elements:\n", add);
+    for(i = n; i < n + add; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    n = n + add;   // Update total number of elements
+
+    // Display updated array
+    printf("\n--- Updated List ---\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
