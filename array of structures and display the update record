@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+// Structure definition
+struct Student {
+    int id;
+    char name[30];
+    int marks;
+};
+
+int main() {
+    struct Student s[5];
+    int i, n, searchId, found = 0;
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    // Input student details
+    for (i = 0; i < n; i++) {
+        printf("\nEnter ID: ");
+        scanf("%d", &s[i].id);
+        printf("Enter Name: ");
+        scanf("%s", s[i].name);
+        printf("Enter Marks: ");
+        scanf("%d", &s[i].marks);
+    }
+
+    // Search ID to update
+    printf("\nEnter ID to update: ");
+    scanf("%d", &searchId);
+
+    for (i = 0; i < n; i++) {
+        if (s[i].id == searchId) {
+            printf("\nRecord Found. Enter new details:\n");
+            printf("Enter New Name: ");
+            scanf("%s", s[i].name);
+            printf("Enter New Marks: ");
+            scanf("%d", &s[i].marks);
+            found = 1;
+
+            // Display updated record
+            printf("\nUpdated Record:\n");
+            printf("ID: %d\n", s[i].id);
+            printf("Name: %s\n", s[i].name);
+            printf("Marks: %d\n", s[i].marks);
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("\nRecord not found.\n");
+    }
+
+    return 0;
+}
